@@ -1,0 +1,37 @@
+@import "color";
+
+@mixin fuente{
+    font-family: $fuente;
+    color:$rosa;
+    background-color: $negro;
+}
+
+@mixin imagen {
+    .logo{
+        width: 60px;
+        height: 40px;
+        padding: 15px;
+    } 
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    @include fuente();
+    @include imagen();
+}
+
+.parte1{
+    display: flex;
+}
+
+.parte2{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+    
+    li{
+        margin: 15px;
+    }
+}

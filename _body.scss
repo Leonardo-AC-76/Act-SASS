@@ -1,0 +1,86 @@
+@import "color";
+$ancho: 500px;
+$alto: 300px;
+
+@mixin tarjeta {
+    margin: 10px;
+    flex-basis: $ancho;
+    height: $alto;
+    background-color: $negro;
+    border: 1px solid $negro;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 1px $negro;
+    gap: 1em;
+    flex-grow: 1;
+
+    .texto{
+        padding: 10px;
+        width: 60%;
+    }
+
+    .texto h1{
+        color: $rosa;
+    }
+
+    .texto h3{
+        color:$gris;
+    }
+
+    .texto p{
+        color:$blanco;
+    }
+}
+
+@mixin imagen($ruta) {
+   background-image: url($ruta); 
+   background-position: center;
+   background-repeat: no-repeat; 
+   background-size: cover;  
+   width: 40%;
+   border-radius: 10px 0 0 10px;
+}
+
+.contenedor{  
+    font-family: $fuente;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.tarjeta1{
+    @include tarjeta();
+    display: flex;
+    
+    .foto1{
+        @include imagen("img/volcan1.jpeg");
+    }
+}
+
+.tarjeta2{
+    @include tarjeta();
+    display: flex;
+
+    .foto2{
+        @include imagen("img/volcan2.png");
+    }
+}
+
+.tarjeta3{
+    @include tarjeta();
+    display: flex;
+
+    .foto3{
+        @include imagen("img/volcan3.jpg");
+    }
+}
+
+.tarjeta4{
+    @include tarjeta();
+    display: flex;
+
+    .foto4{
+        @include imagen("img/volcan4.jpg");
+    }
+}
